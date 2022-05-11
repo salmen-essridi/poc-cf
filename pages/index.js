@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useState } from "react";
 
-export default function Home() {
+export default function Home({ date }) {
 
 
   const [statusMessage, setStatusMessage] = useState("Anonymous");
@@ -47,7 +47,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-
+            SSR time : {
+            }
         </p>
 
 
@@ -71,4 +72,13 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+
+
+
+  const date =  new Date().toISOString() ; 
+
+  return { props: {date }}
 }
