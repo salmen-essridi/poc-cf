@@ -47,8 +47,7 @@ export default function Home({ date }) {
         </h1>
 
         <p className={styles.description}>
-            SSR time : {
-            }
+            SSR time : { date  }
         </p>
 
 
