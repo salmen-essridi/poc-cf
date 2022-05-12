@@ -10,6 +10,8 @@ export default function handler(req, res) {
     name: name, 
   }, 'secret123456');
 
-  res.setHeader('Set-Cookie', [serialize('token', token, { path: '/' }), serialize('must-revalidate', 1, { path: '/' })]);
+ // res.setHeader('Set-Cookie', [serialize('token', token, { path: '/' }), serialize('must-revalidate', 1, { path: '/' })]);
+
+  res.setHeader('Set-Cookie', [serialize('token', token, { path: '/' })]);
   res.status(200).json({ name })
 }
